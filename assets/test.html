@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Cheia com Botão</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        .button-container {
+            background-color: red;
+            height: 95vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background-color: rgba(142, 255, 13, 0.712);
+            border: 1px solid white;
+            height: 40%;
+            width: 24%;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container" id="fullscreen-element">
+        <!-- Botões da metade superior -->
+        <button class="button" onclick="mostrarAlerta('1')">k</button>
+        <button class="button" onclick="mostrarAlerta('2')">e</button>
+        <button class="button" onclick="mostrarAlerta('3')">y</button>
+        <button class="button" onclick="mostrarAlerta('4')">-</button>
+        <button class="button" onclick="mostrarAlerta('6')">b</button>
+        <button class="button" onclick="mostrarAlerta('6')">i</button>
+        <button class="button" onclick="mostrarAlerta('7')">r</button>
+        <button class="button" onclick="mostrarAlerta('8')">d</button>
+    </div>
+    <div>
+        <button onclick="activateFullScreen()">Ativar Tela Cheia</button>
+    </div>
+
+    <script>
+        function activateFullScreen() {
+            var fullscreenElement = document.getElementById('fullscreen-element');
+
+            // Ativa o modo de tela cheia
+            if (fullscreenElement.requestFullscreen) {
+                fullscreenElement.requestFullscreen();
+            } else if (fullscreenElement.mozRequestFullScreen) {
+                fullscreenElement.mozRequestFullScreen();
+            } else if (fullscreenElement.webkitRequestFullscreen) {
+                fullscreenElement.webkitRequestFullscreen();
+            } else if (fullscreenElement.msRequestFullscreen) {
+                fullscreenElement.msRequestFullscreen();
+            }
+        }
+
+        function mostrarAlerta(msg) {
+            alert('Botão ' + msg + ' clicado!');
+        }
+    </script>
+</body>
+
+</html>
